@@ -29,7 +29,7 @@
 
 	<!-- Document Title
 	============================================= -->
-	<title>Barber | Canvas</title>
+	<title>Nicky Cafe</title>
 
 
 	<style>
