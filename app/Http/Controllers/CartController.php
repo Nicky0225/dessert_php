@@ -49,8 +49,18 @@ class CartController extends Controller
         
         try {
             // 取得登入會員資料
+
+            
+            // $user_id = session()->get('user_id');
+            // $User = User::findOrFail($user_id);
+
+            if($user_id = !session()->get('user_id')){
+                throw new Exception('請先登入會員，才能加入購物車');
+            }
+            
             $user_id = session()->get('user_id');
             $User = User::findOrFail($user_id);
+            
             
             // 交易開始
             DB::beginTransaction();
@@ -59,12 +69,14 @@ class CartController extends Controller
             
             // 購買數量
             $buy_count = $input['buy_count'];
-            // 購買後剩餘數量
+            // 確認庫存是否足夠
             $remain_count_after_buy = $Merchandise->remain_count;
-            if ($remain_count_after_buy < 0) {
-                // 購買後剩餘數量小於 0，不足以賣給使用者
-                throw new Exception('商品數量不足，無法購買');
+            if ($Merchandise->remain_count < $buy_count) {
+                // 剩餘數量小於可買數量，不足以賣給使用者
+                throw new Exception('商品庫存不足，無法購買');
             }
+
+            
             // 紀錄購買後剩餘數量
             $Merchandise->remain_count = $remain_count_after_buy;
             $Merchandise->save();

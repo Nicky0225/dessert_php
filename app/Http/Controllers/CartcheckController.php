@@ -5,6 +5,7 @@ use App\Shop\Entity\Merchandise;
 use Illuminate\Http\Request;
 use App\Shop\Entity\User;
 use App\Shop\Entity\Transaction;
+use Exception;
 
 use App\Shop\Entity\Cart;
 
@@ -83,10 +84,14 @@ public function placeOrder()
             // 購買後剩餘數量
             $remain_count_after_buy = $Merchandise->remain_count - $buy_count;
 
-            if ($remain_count_after_buy < 0) {
+            if ($Merchandise->remain_count < $buy_count) {
                 // 購買後剩餘數量小於 0，不足以賣給使用者
-                throw new Exception('商品 ' . $Merchandise->name . ' 數量不足，無法購買');
+                throw new Exception($Merchandise->name . '庫存不足，無法購買');
+                
             }
+
+
+
 
             // 紀錄購買後剩餘數量
             $Merchandise->remain_count = $remain_count_after_buy;

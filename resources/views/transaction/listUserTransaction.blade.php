@@ -6,11 +6,23 @@
 
 <!-- 傳送資料到母模板，並指定變數為 content -->
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 
 <style>
 .container {
-    padding-top: 125px; /* 讓內容區塊下移，避免被header擋住 */
+    padding-top: 150px; /* 讓內容區塊下移，避免被header擋住 */
 }
+
+
+svg {
+    width: 24px;
+    height: 24px;
+}
+
+
 
 
 
@@ -54,9 +66,45 @@
                     @endforeach
                 </table>
 
-                {{-- 分頁頁數按鈕 --}}
+
+            
+
+                <!-- {{-- 分頁頁數按鈕 --}} -->
                 {{ $TransactionPaginate->links() }}
+
+                
             </div>
         </div>
     </div>
+
+    @if (session('message'))
+    <script>
+        window.onload = function() {
+            var messageModal = new bootstrap.Modal(document.getElementById('messageModal'));
+            messageModal.show();
+        };
+    </script>
+@endif
+
+
+
+
+<!-- 模態框 -->
+<div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="messageModalLabel">訊息</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                {{ session('message') }}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">確定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 @endsection

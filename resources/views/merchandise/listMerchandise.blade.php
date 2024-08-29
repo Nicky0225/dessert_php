@@ -41,23 +41,47 @@
 
 </div> -->
 
+<style>
+
+.parallax-bg {
+    width: 100%; /* 使影片寬度適應容器寬度 */
+    height: auto; /* 高度自動調整以保持比例 */
+    object-fit: cover; /* 使影片填充容器，並裁剪超出部分 */
+    object-position: center; /* 使影片居中顯示 */
+    position: absolute; /* 讓影片背景覆蓋整個容器 */
+    top: 0;
+    left: 0;
+    z-index: -1; /* 讓影片在其他內容之下 */
+}
+
+.page-title {
+    position: relative; /* 使子元素的絕對定位基於此容器 */
+    overflow: hidden; /* 隱藏超出容器的影片部分，防止出現捲動條 */
+}
+
+
+
+
+</style>
+
 
 	<!-- Page Title -->
-	<section class="page-title page-title-parallax parallax dark page-title-center include-header" style="padding: 120px 0 180px;">
-		<video autoplay loop muted playsinline class="parallax-bg">
-			<source src="{{asset('assets/nicky/dessert.mp4')}}" type="video/mp4">
-			
-		</video>
+	<section class="page-title page-title-parallax parallax dark page-title-center include-header" style="padding: 300px 0 180px;">
+    <video autoplay loop muted playsinline class="parallax-bg">
+        <source src="{{asset('assets/nicky/dessert_video.mp4')}}" type="video/mp4">
+    </video>
 
-		<div class="container">
-			<div class="page-title-row">
-				<div class="page-title-content">
-					<h1 class="font-secondary text-capitalize ls-0" style="font-size: 74px;"></h1>
-					<span class="fw-normal"></span>
-				</div>
-			</div>
-		</div>
-	</section><!-- .page-title end -->
+    <div class="container">
+        <div class="page-title-row">
+            <div class="page-title-content">
+                <h1 class="font-secondary text-capitalize ls-0" style="font-size: 74px;"></h1>
+                <span class="fw-normal"></span>
+            </div>
+        </div>
+    </div>
+</section><!-- .page-title end -->
+
+	<!-- .page-title end -->
 
 	<!-- Content -->
 	<section id="content">
@@ -69,19 +93,19 @@
 					<ul class="nav canvas-alt-tabs2 tabs nav-pills nav-fill mb-5" id="canvas-tab-nav2" role="tablist">
 						<li class="nav-item" role="presentation">
 							<button class="nav-link active" id="canvas-tabs-breakfast-tab" data-bs-toggle="pill" data-bs-target="#tabs-breakfast"
-								type="button" role="tab" aria-controls="canvas-tabs-breakfast" aria-selected="true"><img src="{{asset('assets/nicky/breads.png')}}" alt="Image" width="20" height="20"> Breads</button>
+								type="button" role="tab" aria-controls="canvas-tabs-breakfast" aria-selected="true"><img src="{{asset('assets/nicky/breads.png')}}" alt="Image" width="20" height="20"> 麵包</button>
 						</li>
 						<li class="nav-item" role="presentation">
 							<button class="nav-link" id="canvas-tabs-salad-tab" data-bs-toggle="pill" data-bs-target="#tabs-salad"
-								type="button" role="tab" aria-controls="canvas-tabs-salad" aria-selected="false"><img src="{{asset('assets/nicky/cake.png')}}" alt="Image" width="20" height="20"> Cakes</button>
+								type="button" role="tab" aria-controls="canvas-tabs-salad" aria-selected="false"><img src="{{asset('assets/nicky/cake.png')}}" alt="Image" width="20" height="20"> 蛋糕</button>
 						</li>
 						<li class="nav-item" role="presentation">
 							<button class="nav-link" id="canvas-tabs-pizza-tab" data-bs-toggle="pill" data-bs-target="#tabs-pizza"
-								type="button" role="tab" aria-controls="canvas-tabs-pizza" aria-selected="false"><img src="{{asset('assets/nicky/coffee-cup.png')}}" alt="Image" width="20" height="20"> Beverage</button>
+								type="button" role="tab" aria-controls="canvas-tabs-pizza" aria-selected="false"><img src="{{asset('assets/nicky/coffee-cup.png')}}" alt="Image" width="20" height="20"> 飲品</button>
 						</li>
 						<li class="nav-item" role="presentation">
 							<button class="nav-link" id="canvas-tabs-dessert-tab" data-bs-toggle="pill" data-bs-target="#tabs-dessert"
-								type="button" role="tab" aria-controls="canvas-tabs-dessert" aria-selected="false"><img src="{{asset('assets/nicky/gift-box.png')}}" alt="Image" width="20" height="20"> Gift</button>
+								type="button" role="tab" aria-controls="canvas-tabs-dessert" aria-selected="false"><img src="{{asset('assets/nicky/gift-box.png')}}" alt="Image" width="20" height="20"> 節慶禮盒</button>
 						</li>
 					</ul>
 

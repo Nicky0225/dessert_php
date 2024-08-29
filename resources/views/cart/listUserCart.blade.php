@@ -10,13 +10,20 @@
         <h1>{{ $title }}</h1>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <!-- Bootstrap CSS -->
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+        <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"> -->
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- jQuery -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> -->
 
         <!-- Bootstrap JS -->
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 
         
         
@@ -25,17 +32,17 @@
        
         <style>
             /* Chrome, Safari, Edge, Opera */
-            input::-webkit-outer-spin-button,
+            /* input::-webkit-outer-spin-button,
             input::-webkit-inner-spin-button {
                 -webkit-appearance: none;
                 margin: 0;
-            }
+            } */
             /* Firefox */
-            input[type=number] {
+            /* input[type=number] {
                 moz-appearance: textfield;
-            }
+            } */
 
-            .w3-button {width:20px;}
+            /* .w3-button {width:20px;} */
 
 
             .col-md-12{
@@ -49,10 +56,13 @@
             }
 
 
+
+
+
         </style>
 
         {{-- 錯誤訊息模板元件 --}}
-        @include('components.error')
+        <!-- @include('components.error') -->
 
         <div class="row">
             <div class="col-md-12">
@@ -106,7 +116,7 @@
                             let quantity = document.getElementById('quantity-' + {{ $Cart->id }}).value;
                             let newTotalPrice = unitPrice * quantity;
 
-                            // 更新页面上的总价显示
+                            // 更新頁面上的總價
                             document.getElementById('total-price-' +{{ $Cart->id }}).innerText = newTotalPrice.toFixed(2);
                         }
                         </script>
@@ -159,13 +169,71 @@
                     <button type="submit" style="border:0px; background-color:#FF5733; color: white;" class="btn btn-order">下單</button>
                 </form>
 
+
+
                 @if(session('message'))
-                    <script>
-                        window.onload = function() {
-                            alert('{{ session('message') }}');
-                        };
-                    </script>
-                @endif
+					<script>
+						window.onload = function() {
+						var messageModal = new bootstrap.Modal(document.getElementById('messageModal'));
+						messageModal.show();
+						};
+					</script>
+				@endif
+
+
+				<!-- 模態框 -->
+				<div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="messageModalLabel">訊息</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								{{ session('message') }}
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-primary" data-bs-dismiss="modal">確定</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+                @if ($errors->any())
+					<script>
+						window.onload = function() {
+						    var errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
+							errorModal.show();
+						};
+					</script>
+				@endif
+
+				<!-- 模態框 -->
+				<div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="errorModalLabel">錯誤訊息</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								{{ $errors->first() }}
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-primary" data-bs-dismiss="modal">確定</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+
+
+
+
+
+
 
 
                 
@@ -173,5 +241,9 @@
                 {{$CartPaginate->links() }}
             </div>
         </div>
+
+
     </div>
+
+
 @endsection

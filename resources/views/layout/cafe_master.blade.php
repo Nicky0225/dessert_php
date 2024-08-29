@@ -120,6 +120,9 @@
 								
 								
 								@if ( session()->has('user_id'))
+								<li class="menu-item"><a class="menu-link" href="{{route('cart')}}">購物車</a></li>
+								<li class="menu-item"><a class="menu-link" href="{{route('transaction')}}">購買紀錄</a></li>
+
 								<li class="menu-item border-0">
 								<a href="{{route('user.auth.signout')}}"  class="button button-color reverse text-uppercase ls-1 w-100 m-0 text-center text-uppercase ls-1"><i class="bi bi-person-fill fs-6"></i>登出</a>
 								</li>
@@ -192,17 +195,17 @@
 				<!-- 左上角圖標 Icons
 				============================================= -->
 				<div class="slider-social d-none d-lg-block">
-					<a href="{{route('cart')}}"  class="social-icon si-small border-0 h-bg-cart4">
+					<!-- <a href="{{route('cart')}}"  class="social-icon si-small border-0 h-bg-cart4">
 						<i class="bi bi-cart4" style="font-size: 1.25rem;"></i>
 						<i class="bi bi-cart4" style="font-size: 1.25rem;"></i>
 					</a>
-					<a href="https://twitter.com/__semicolon" target="_blank" class="social-icon si-small border-0 h-bg-search">
-					<i class="bi bi-search" style="font-size: 1.25rem;"></i>
-					<i class="bi bi-search" style="font-size: 1.25rem;"></i>
-					</a>
+					<a href="{{route('transaction')}}" target="_blank" class="social-icon si-small border-0 h-bg-search">
+					<i class="bi bi-receipt" style="font-size: 1.26rem;"></i>
+					<i class="bi bi-receipt" style="font-size: 1.26rem;"></i>
+					</a> -->
 					<a href="#location"  class="social-icon si-small border-0 h-bg-chat-dots">
-						<i class="bi bi-chat-dots" style="font-size: 1.25rem;"></i>
-						<i class="bi bi-chat-dots" style="font-size: 1.25rem;"></i>
+						<i class="bi bi-chat-dots" style="font-size: 1.8rem;"></i>
+						<i class="bi bi-chat-dots" style="font-size: 1.8rem;"></i>
 					</a>
 				</div>
 

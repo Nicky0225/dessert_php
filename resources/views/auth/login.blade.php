@@ -93,9 +93,11 @@
 
 									<div class="w-100 text-center">
 										<h4 class="mb-3">快速登入</h4>
-										<a href="#" class="button button-rounded bg-facebook">Facebook</a>
-										<span class="d-none d-md-inline-block">or</span>
-										<a href="#" class="button button-rounded" style="background-color: #00c300; color: #ffffff; border-color: #00c300;">LINE</a>
+										<a href="#" class="button button-rounded bg-white" style='color:black'><img src="{{ asset('assets/nicky/google.png') }}" alt="Gmail Login Icon" style='height:20px' >&nbsp;&nbsp;Login with Gmail</a>
+
+										
+										<!-- <span class="d-none d-md-inline-block">or</span> -->
+										<!-- <a href="#" class="button button-rounded" style="background-color: #00c300; color: #ffffff; border-color: #00c300;">LINE</a> -->
 
 									</div>
 								</div>

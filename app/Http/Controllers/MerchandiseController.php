@@ -217,6 +217,9 @@ class MerchandiseController extends Controller
                 // 購買後剩餘數量小於 0，不足以賣給使用者
                 throw new Exception('商品數量不足，無法購買');
             }
+
+
+            
             // 紀錄購買後剩餘數量
             $Merchandise->remain_count = $remain_count_after_buy;
             $Merchandise->save();
