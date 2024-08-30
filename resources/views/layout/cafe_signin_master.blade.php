@@ -139,6 +139,20 @@
     color: 	#D26900 !important;
 }
 
+/* 修改按鈕背景顏色 */
+.nav-link.button.button-color.reverse.text-uppercase.ls-1 {
+    background-color:#BF9456 !important; /* 替換為你想要的顏色 */
+    color: #ffffff !important; /* 修改文字顏色，確保對比度良好 */
+}
+
+/* 如果需要修改懸停狀態的顏色 */
+.nav-link.button.button-color.reverse.text-uppercase.ls-1:hover {
+    background-color: #3C3C3C !important; /* 替換為你想要的懸停顏色 */
+    color: #ffffff !important; /* 修改文字顏色 */
+}
+
+
+
 
 
 	</style>

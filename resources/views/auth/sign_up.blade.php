@@ -25,7 +25,7 @@
         }
 
 		.content-wrap {
-			padding-top: 130px; /* 讓內容區塊下移，避免被header擋住 */
+			padding-top: 40px; /* 讓內容區塊下移，避免被header擋住 */
 		}
 
 
