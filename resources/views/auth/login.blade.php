@@ -25,7 +25,7 @@
 }
 
 .vertical-middle {
-    padding-top: 110px; /* 讓內容區塊下移，避免被header擋住 */
+    padding-top: 24px; /* 讓內容區塊下移，避免被header擋住 */
 }
 
 

@@ -83,7 +83,7 @@
 
 <style>
 .container {
-    padding-top: 44px; /* 讓內容區塊下移，避免被header擋住 */
+    padding-top: 8px; /* 讓內容區塊下移，避免被header擋住 */
 }
 
 .content-wrap {

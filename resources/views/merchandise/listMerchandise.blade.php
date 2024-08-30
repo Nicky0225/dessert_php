@@ -41,6 +41,8 @@
 
 </div> -->
 
+
+
 <style>
 
 .parallax-bg {
@@ -58,6 +60,8 @@
     position: relative; /* 使子元素的絕對定位基於此容器 */
     overflow: hidden; /* 隱藏超出容器的影片部分，防止出現捲動條 */
 }
+
+
 
 
 
@@ -93,7 +97,7 @@
 					<ul class="nav canvas-alt-tabs2 tabs nav-pills nav-fill mb-5" id="canvas-tab-nav2" role="tablist">
 						<li class="nav-item" role="presentation">
 							<button class="nav-link active" id="canvas-tabs-breakfast-tab" data-bs-toggle="pill" data-bs-target="#tabs-breakfast"
-								type="button" role="tab" aria-controls="canvas-tabs-breakfast" aria-selected="true"><img src="{{asset('assets/nicky/breads.png')}}" alt="Image" width="20" height="20"> 麵包</button>
+								type="button" role="tab" aria-controls="canvas-tabs-breakfast" aria-selected="true" ><img src="{{asset('assets/nicky/breads.png')}}" alt="Image" width="20" height="20" > 麵包</button>
 						</li>
 						<li class="nav-item" role="presentation">
 							<button class="nav-link" id="canvas-tabs-salad-tab" data-bs-toggle="pill" data-bs-target="#tabs-salad"

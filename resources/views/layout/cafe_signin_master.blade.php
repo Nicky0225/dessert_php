@@ -27,6 +27,15 @@
 	<link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+
+    <!-- Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     
 
 	<!-- Document Title
@@ -54,10 +63,6 @@
     width: 100%;
     box-sizing: border-box;
 }
-
-
-
-
 
 
 
@@ -125,11 +130,14 @@
 
 
 
+// 導航欄樣式
+.navbar-light .navbar-nav .nav-link {
+    color: #ff5733 !important;
+}
 
-
-
-
-
+.navbar-light .navbar-nav .nav-link:hover {
+    color: 	#D26900 !important;
+}
 
 
 
@@ -149,79 +157,59 @@
 	<!-- Header
 	============================================= -->
 <header>
-<div class="row">
-<div class="primary-menu" >
+        <!-- 折疊按鈕 -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{{ route('user.auth.home') }}">
+            <img class="logo" src="{{ asset('assets/nicky/black_logo.png') }}" alt="Logo" >
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
+        <!-- 折疊內容 -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+            <!-- 主選單項目 -->
+            <li class="nav-item mx-2">
+                <a class="nav-link" href="{{ route('user.auth.home') }}">回首頁</a>
+            </li>
+            <li class="nav-item mx-2">
+                <a class="nav-link" href="{{ route('user.auth.home') }}#about">關於我們</a>
+            </li>
+            <li class="nav-item mx-2">
+                <a class="nav-link" href="{{ route('user.auth.home') }}#news">最新消息</a>
+            </li>
+            <li class="nav-item mx-2">
+                <a class="nav-link" href="{{ route('merchandise') }}">產品介紹</a>
+            </li>
+            <li class="nav-item mx-2">
+                <a class="nav-link" href="{{ route('user.auth.home') }}#location">門市資訊</a>
+            </li>
+            
+            <!-- 根據登入狀態顯示的選項 -->
+            @if (session()->has('user_id'))
+                <li class="nav-item mx-2">
+                <a class="nav-link" href="{{ route('cart') }}">購物車</a>
+                </li>
+                <li class="nav-item mx-2">
+                <a class="nav-link" href="{{ route('transaction') }}">交易紀錄</a>
+                </li>
+                <li class="nav-item mx-2">
+                <a class="nav-link button button-color reverse text-uppercase ls-1 w-100 text-center" href="{{ route('user.auth.signout') }}">
+                    <i class="bi bi-person-fill fs-6"></i> 登出
+                </a>
+                </li>
+            @else
+                <li class="nav-item mx-2">
+                <a class="nav-link button button-color reverse text-uppercase ls-1" href="{{ route('user.auth.login') }}">
+                    <i class="bi bi-person-fill fs-6"></i> 會員登入 / 註冊
+                </a>
+                </li>
+            @endif
+            </ul>
+        </div>
+        </nav>
 
-    <ul class="menu-container " style="list-style: none; padding: 0; margin: 0;">
-        
-            <div class="col-3 d-flex justify-content-left">
-                <div class="row d-flex align-items-center">
-                    <div class="col-6">
-                        <li class="menu-item">
-                            <a class="menu-link" href="{{ route('user.auth.home') }}">
-                                <img class="logo" src="{{ asset('assets/nicky/black_logo.png') }}" alt="Logo" >
-                            </a>
-                        </li>
-                    </div>
-                    <div class="col-6">    
-                        <li class="menu-item mx-2"><a class="menu-link" href="{{ route('user.auth.home') }}">回首頁</a></li>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 ">
-                <div class="row" >
-                    <div class="col-2"></div>
-                    <div class="col-2">
-                        <li class="menu-item mx-2"><a class="menu-link" href="{{ route('user.auth.home') }}#about">關於我們</a></li>
-                    </div>
-                    <div class="col-2" > 
-                        <li class="menu-item mx-2"><a class="menu-link" href="{{ route('user.auth.home') }}#news">最新消息</a></li>
-                    </div>
-                    <div class="col-2" > 
-                        <li class="menu-item mx-2"><a class="menu-link" href="{{route('merchandise')}}">產品介紹</a></li>
-                    </div>
-                    <div class="col-2" > 
-                        <li class="menu-item mx-2"><a class="menu-link" href="{{ route('user.auth.home') }}#location">門市資訊</a></li>
-                    </div>
-                    <div class="col-2"></div>
-                </div>    
-            </div>
-            <div class="col-3  d-flex justify-content-right">
-                <div class="row d-flex align-items-center">
-                        
-                            @if (session()->has('user_id'))
-
-                            <div class="col-4"> 
-                                <li class="menu-item mx-2"><a class="menu-link" href="{{route('cart')}}">購物車</a></li>
-                            </div>
-                            <div class="col-4"> 
-                                <li class="menu-item mx-2"><a class="menu-link" href="{{route('transaction')}}">交易紀錄</a></li>
-                            </div>
-                            <div class="col-4 ">  
-                                <li class="menu-item">
-                                <a href="{{route('user.auth.signout')}}" class="button button-color reverse text-uppercase ls-1 w-100 text-center">
-                                    <i class="bi bi-person-fill fs-6"></i>登出
-                                </a>
-                                </li>
-                            </div>
-                            @else
-                            <li class="menu-item">
-                            <div class="col-12"> 
-                                <a href="{{route('user.auth.login')}}" class="button button-color reverse text-uppercase ls-1">
-                                    <i class="bi bi-person-fill fs-6"></i>會員登入 / 註冊
-                                </a>
-                            </div>
-                            </li>
-                            @endif 
-                        
-                </div>   
-            </div>
-        
-    </ul>
-</div>
-</div>
 
 
     </header>

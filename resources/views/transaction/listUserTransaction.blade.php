@@ -10,10 +10,14 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 
 <style>
 .container {
-    padding-top: 150px; /* 讓內容區塊下移，避免被header擋住 */
+    padding-top: 40px; /* 讓內容區塊下移，避免被header擋住 */
 }
 
 
@@ -100,9 +104,9 @@ svg {
             <div class="modal-body">
                 {{ session('message') }}
             </div>
-            <div class="modal-footer">
+            <!-- <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal">確定</button>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
