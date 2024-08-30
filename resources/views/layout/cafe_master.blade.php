@@ -204,9 +204,30 @@
 					<i class="bi bi-receipt" style="font-size: 1.26rem;"></i>
 					</a> -->
 					<a href="#location"  class="social-icon si-small border-0 h-bg-chat-dots">
-						<i class="bi bi-chat-dots" style="font-size: 1.8rem;"></i>
-						<i class="bi bi-chat-dots" style="font-size: 1.8rem;"></i>
+						<i class="bi bi-chat-dots" style="font-size: 1.5rem;"></i>
+						<i class="bi bi-chat-dots" style="font-size: 1.5rem;"></i>
 					</a>
+
+					@if ( session()->has('user_id'))
+
+					<a href="{{route('cart')}}"  class="social-icon si-small border-0 h-bg-chat-dots">
+						<i class="bi bi-cart3" style="font-size: 1.5rem;"></i>
+						<i class="bi bi-cart3" style="font-size: 1.5rem;"></i>
+					</a>
+
+					<a href="{{route('transaction')}}"  class="social-icon si-small border-0 h-bg-chat-dots">
+						<i class="bi bi-receipt" style="font-size: 1.5rem;"></i>
+						<i class="bi bi-receipt" style="font-size: 1.5rem;"></i>
+					</a>
+
+
+
+					@endif 
+
+
+
+
+
 				</div>
 
 			</div>
