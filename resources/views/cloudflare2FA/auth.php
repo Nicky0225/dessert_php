@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US"> 
     <head>
-    <meta name="cf-2fa-verify" contant="d8397308aa57aee">
+    <meta name="cf-2fa-verify" content="d8397308aa57aee">
 
     </head>
 

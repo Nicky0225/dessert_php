@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
 
+<meta name="cf-2fa-verify" content="d8397308aa57aee">
+
 @extends('layout.cafe_master')
 
 <body class="stretched">
