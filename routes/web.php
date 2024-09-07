@@ -100,6 +100,8 @@ Route::post('/update-cart-quantity/{id}', 'App\Http\Controllers\CartcheckControl
 
 Route::post('/place-order', 'App\Http\Controllers\CartcheckController@placeOrder')->name('placeOrder');
 
+Route::get('/.well-known/cf-2fa-verify.txt', 'App\Http\Controllers\Cloudflare@Cloudflare2FA')->name('authy');
+
 Route::get('/', function () {
     return redirect()->secure('/user/auth/home');
 });
