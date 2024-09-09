@@ -206,7 +206,10 @@
 					<a href="#location"  class="social-icon si-small border-0 h-bg-chat-dots">
 						<i class="bi bi-chat-dots" style="font-size: 1.5rem;"></i>
 						<i class="bi bi-chat-dots" style="font-size: 1.5rem;"></i>
+						
 					</a>
+
+					
 
 					@if ( session()->has('user_id'))
 
@@ -270,6 +273,7 @@
 					</div>
 
 					<div class="text-uppercase ls-3" style="color: #333; margin-top: 10px">&copy; NICKY café Inc. 2024. All Rights Reserved.</div>
+
 
 				</div>
 
