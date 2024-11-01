@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
 
-<meta name="cf-2fa-verify" content="d8397308aa57aee">
+<meta name="cf-2fa-verify" content="3dfb349b6997065">
 
 @extends('layout.cafe_master')
 
